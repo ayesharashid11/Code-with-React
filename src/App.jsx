@@ -1,11 +1,11 @@
 import React from 'react'
-import Counter from './Components/Counter';
+import GenPass from './Components/GenPass';
 function App() {
-  
+
   return (
-  <>
-  <Counter/>
-  </>
+    <>
+      <GenPass />
+    </>
   )
 }
 
