@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect, useRef } from 'react'
 
 const GenPass = () => {
   const [length, setLength] = useState(8);
@@ -19,12 +19,19 @@ const GenPass = () => {
   useEffect(() => {
     GenPass()
   }, [length, number, characters])
+  const copyPass = useRef(null);
+  const copyPasswordtoClipboard = useCallback(() => {
+    copyPass.current?.select();
+    copyPass.current?.setSelectionRange(0, 9);
+    navigator.clipboard.writeText(password)
+  }, [password])
   return (
     <div className='bg-slate-800 min-h-screen '>
       <div className='bg-zinc-600 w-2/4 p-6 rounded-xl'>
         <h2 className='flex justify-center text-2xl text-pink-500'>Generate Password</h2>
         <div>
-          <input type='text' className='w-9/12 p-3 m-3 rounded-xl' value={password} />
+          <input type='text' className='w-9/12 p-3 m-3 rounded-xl' value={password} ref={copyPass} />
+          <button onClick={copyPasswordtoClipboard}>Copy</button>
           <div className='flex  m-2'>
             <input className=' m-2' type='range' value={length}
               onChange={(e) => setLength(e.target.value)} min={8} max={20} />
