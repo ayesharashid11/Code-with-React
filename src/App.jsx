@@ -1,11 +1,16 @@
 
 import './App.css'
+import USerProvider from './context/USerProvider'
 
 function App() {
   
   return (
- <> <h2 className='text-2xl text-emerald-700 flex justify-center' > 
+ <>
+ <USerProvider>
+ <h2 className='text-2xl text-emerald-700 flex justify-center' > 
  Getting Started Context Api </h2>
+ </USerProvider>
+ 
  </>
   )
 }
