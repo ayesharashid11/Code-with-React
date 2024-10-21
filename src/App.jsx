@@ -1,10 +1,10 @@
 import React from 'react'
-import BgChanger from './Components/BgChanger';
+import Counter from './Components/Counter';
 function App() {
   
   return (
   <>
-  <BgChanger/>
+  <Counter/>
   </>
   )
 }
