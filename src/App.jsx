@@ -1,11 +1,11 @@
-
-import './App.css'
-
+import React from 'react'
+import BgChanger from './Components/BgChanger';
 function App() {
   
   return (
- <> <h2 className='text-2xl text-emerald-700 flex justify-center' >Happy Coding!..</h2>
- </>
+  <>
+  <BgChanger/>
+  </>
   )
 }
 
